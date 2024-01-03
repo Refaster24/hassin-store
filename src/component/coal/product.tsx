@@ -20,7 +20,7 @@ export default function Product(){
         <div className="self-center flex flex-row-reverse justify-between w-full">
           <div className="">
             <h2 className="font-9 font-bold mb-2">منتج رقم واحد</h2>
-            <span className="">12.000 kd</span>
+            <span className="">12&apos;000 kd</span>
           </div>
 
           <div className="">
