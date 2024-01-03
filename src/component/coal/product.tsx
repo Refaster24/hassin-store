@@ -16,11 +16,11 @@ export default function Product(){
 
   return(
     <div className="flex flex-row-reverse px-4 rounded-lg">
-        <Image src={product} alt="" className="w-32 ml-2" />
+        <Image src={product} alt="" className="w-28 ml-2" />
         <div className="self-center flex flex-row-reverse justify-between w-full">
           <div className="">
-            <h2 className="font-9 font-bold mb-2">منتج رقم واحد</h2>
-            <span className="">12&apos;000 kd</span>
+            <h2 className="font-9 font-bold mb-2">منتج رقم 1</h2>
+            <span className="">12.000 kd</span>
           </div>
 
           <div className="">
