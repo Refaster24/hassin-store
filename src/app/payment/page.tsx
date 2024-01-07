@@ -6,5 +6,8 @@ const Cart = dynamic(() => import('@/component/coal/cart'), {
   })
 
 export default function Payment(){
-    return <Cart/>
+    return <div>
+                <h1>جاري التطوير</h1>
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
 }
