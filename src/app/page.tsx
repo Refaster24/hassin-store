@@ -1,25 +1,35 @@
 "use client"
-import Cart from "@/component/coal/cart";
 import Product from "@/component/coal/product";
 import { products } from "@/db/products";
 import { useCartStore } from "@/store/cart";
+import { useEffect } from "react";
+import dynamic from "next/dynamic";
 
 // window.localStorage.clear()
 
+const Cart = dynamic(() => import('@/component/coal/cart'), {
+  ssr: false,
+  loading: () => <p>gg</p>
+})
+
 export default function Home() {
   
+  // default state
   const setProduct = useCartStore((state => state.setProduct))
+  useEffect(()=>{
+    if(typeof window !== 'undefined'){
     const localStorage = window.localStorage;
-
-    // default state
-    if(localStorage.length !== 0 && useCartStore((state => state.products)).length === 0) {
-      const product = []
+    if(localStorage.length !== 0 && useCartStore.getState().products.length === 0) {
+      const product = [] as any
       Object.keys(localStorage).forEach(key => {
-        product.push(JSON.parse(localStorage.getItem(key)));
+        product.push(JSON.parse(localStorage.getItem(key) as any));
       });
       setProduct(product)
     }
-      // 
+
+  }},[])
+    // 
+
   return (
   <>
     <main className="w-full max-w-md mb-20 relative">

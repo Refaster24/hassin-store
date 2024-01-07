@@ -57,12 +57,11 @@ body{
   border-color: var(--color-9);
 }
 
+/* cart start */
 .cart{
   animation: cart 600ms ease-out;
   -webkit-animation: cart 600ms ease-out;
 }
-
-
 
 @keyframes cart {
   from{
@@ -73,6 +72,7 @@ body{
   }
 }
 
+/* cart end */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
