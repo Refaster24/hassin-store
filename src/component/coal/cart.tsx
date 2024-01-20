@@ -10,8 +10,8 @@ const InCart = dynamic(() => import('../coal/in-cart'), {
 
 export default function Cart(){
 
-  const cart = document.getElementById('cart')
-    const numberOfPurchases = useCartStore(state =>{
+  const numberOfPurchases = useCartStore(state =>{
+      const cart = document.getElementById('cart')
       const button = document.getElementById('button')
       if(state.products.length > 0){
         button?.classList.add('bg-7')
@@ -25,10 +25,11 @@ export default function Cart(){
       return state.products
     })
     function cartHandler(){
+      const cart = document.getElementById('cart')
       if(numberOfPurchases.length === 0) {
         return null
       }
-      if(!cart?.classList.contains('cart')) {
+      if(cart?.classList.contains('translate-y-[24em]')) {
         cart?.classList.remove('translate-y-[24em]')
         cart?.classList.add('cart');
       }
@@ -47,8 +48,12 @@ export default function Cart(){
         <div>
           <div className="h-80 overflow-y-scroll">
             {
-              numberOfPurchases.map((data) => {
-                return <InCart data={data}/>
+              numberOfPurchases.map((data,id) => {
+                return (
+                  <div key={id}>
+                    <InCart data={data}/>
+                  </div>
+                )
               })
             }
           </div>

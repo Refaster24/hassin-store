@@ -2,7 +2,7 @@
 import Product from "@/component/coal/product";
 import { products } from "@/db/products";
 import { useCartStore } from "@/store/cart";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import dynamic from "next/dynamic";
 
 // window.localStorage.clear()
@@ -12,22 +12,34 @@ const Cart = dynamic(() => import('@/component/coal/cart'), {
   loading: () => <p>gg</p>
 })
 
+const DefaultState = dynamic(() => import('@/component/coal/default-state'), {
+  ssr: false,
+  loading: () => <p>gg</p>
+})
+
 export default function Home() {
   
   // default state
-  const setProduct = useCartStore((state => state.setProduct))
-  useEffect(()=>{
-    if(typeof window !== 'undefined'){
-    const localStorage = window.localStorage;
-    if(localStorage.length !== 0 && useCartStore.getState().products.length === 0) {
-      const product = [] as any
-      Object.keys(localStorage).forEach(key => {
-        product.push(JSON.parse(localStorage.getItem(key) as any));
-      });
-      setProduct(product)
-    }
-
-  }},[])
+  // const setProduct = useCartStore((state => state.setProduct))
+  
+  // useEffect(()=>{
+  //   if(typeof window !== 'undefined'){
+  //     const localStorage = window.localStorage;
+  //     if(localStorage.length !== 0 && useCartStore.getState().products.length === 0) {
+  //     const cart = document.getElementById('cart')
+  //     const button = document.getElementById('button')
+  //     const product = [] as any
+  //     Object.keys(localStorage).forEach(key => {
+  //       product.push(JSON.parse(localStorage.getItem(key) as any));
+  //     });
+  //     setProduct(product)
+  //     // cart?.classList.remove('translate-y-[24em]')
+  //     // cart?.classList.add('cart');
+  //     button?.classList.remove('bg-8')
+  //     button?.classList.add('bg-7')
+  //     console.log('hh')
+  //   }
+  // }},[])
     // 
 
   return (
@@ -37,12 +49,17 @@ export default function Home() {
       Hussen coal
     </h1>
     
-      {products.map((product) => {
-        return <Product data={product}/>
-      })
+      {products.map((product,id) => {
+        return (
+          <div key={id}>
+            <Product data={product}/>
+          </div>
+          )
+        })
       }
 
       <Cart/>
+      <DefaultState/>
     </main>
   </>
   )
