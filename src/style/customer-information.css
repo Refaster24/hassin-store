@@ -1,0 +1,77 @@
+:root {
+    --color-1: #F2F2F2;
+    --color-2: #8C8C8C;
+    --color-3: #545559;
+    --color-4: #3B3B40;
+    --color-5: #181D26;
+    --color-6: #FF4858;
+}
+
+form{
+    margin: 1em;
+    color: var(--color-5);
+}
+
+h2{
+
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+label{
+    display: block;
+}
+
+input{
+    border: 1px solid var(--color-3);
+    border-radius: .5em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
+
+    padding-right: 6px;
+}
+
+input:focus-visible{
+    outline: 1px solid var(--color-5);
+}
+
+.contact-information{
+    display: flex;
+
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-between;
+
+}
+
+
+.location{
+    width: 100%;
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+}
+.filterFactors{
+    width: 100%;
+}
+
+select{
+
+}
+
+.location-2{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1em;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.location input{
+    width: 4em;
+}

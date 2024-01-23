@@ -41,7 +41,7 @@ export default function Cart(){
 
 
     return(
-        <div id="cart" className='max-w-md w-full fixed bottom-0 bg-5 translate-y-[24em]'>
+        <section id="cart" className='max-w-md w-full fixed bottom-0 bg-5 translate-y-[24em]'>
         <div className="bg-9 font-5 text-center text-2xl py-2 rounded-t-3xl">
           <button onClick={cartHandler} id="button" className="w-3/4 bg-8 font-5 px-2 py-1 rounded-lg my-2">المشتريات {`(${numberOfPurchases.length})`}</button>
         </div>
@@ -49,6 +49,7 @@ export default function Cart(){
           <div className="h-80 overflow-y-scroll">
             {
               numberOfPurchases.map((data,id) => {
+                if(data.id === undefined) return null
                 return (
                   <div key={id}>
                     <InCart data={data}/>
@@ -61,6 +62,6 @@ export default function Cart(){
             <Link href={'/payment'}><button className="w-3/4 bg-7 font-5 px-2 py-1 rounded-lg mt-2">شراء سريع</button></Link>
           </div>
         </div>
-      </div>
+      </section>
     )
 }

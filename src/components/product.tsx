@@ -11,10 +11,10 @@ const AddToCart = dynamic(() => import('./add-to-cart'), {
 export default function Product({data}:{ data: product}){
 
   return(
-    <div className="flex flex-row-reverse px-4 rounded-lg my-4">
+    <div className="flex px-4 rounded-lg my-4">
         <Image src={data.img} alt={data.name} width={112} height={10} className="ml-2"/>
-        <div className="self-center flex flex-row-reverse justify-between w-full">
-          <div className='text-end'>
+        <div className="self-center flex justify-between w-full">
+          <div className=''>
             <h2 className="font-9 font-bold mb-2">{data.name}</h2>
             <span className="text-sm">{data.price} kd</span>
           </div>

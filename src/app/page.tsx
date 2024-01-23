@@ -1,18 +1,18 @@
 "use client"
-import Product from "@/component/product";
+import Product from "@/components/product";
 import { products } from "@/db/products";
-import { useCartStore } from "@/store/cart";
+// import { useCartStore } from "@/store/cart";
 // import { useEffect } from "react";
 import dynamic from "next/dynamic";
 
 // window.localStorage.clear()
 
-const Cart = dynamic(() => import('@/component/cart'), {
+const Cart = dynamic(() => import('@/components/cart'), {
   ssr: false,
   loading: () => <p>gg</p>
 })
 
-const DefaultState = dynamic(() => import('@/component/default-state'), {
+const DefaultState = dynamic(() => import('@/components/default-state'), {
   ssr: false,
   loading: () => <p>gg</p>
 })
@@ -48,7 +48,7 @@ export default function Home() {
     <h1 className="bg-9 font-5 text-center text-2xl mb-4 py-2 rounded-b-3xl">
       Hussen coal
     </h1>
-    
+    <section>
       {products.map((product,id) => {
         return (
           <div key={id}>
@@ -57,6 +57,7 @@ export default function Home() {
           )
         })
       }
+    </section>
 
       <Cart/>
       <DefaultState/>
