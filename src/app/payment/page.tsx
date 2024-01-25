@@ -18,23 +18,23 @@ export default function Payment(){
   const products = useCartStore().products
 
 
-    return (
-    <main className="w-full max-w-md relative">
-      <div className='flex flex-wrap'>
-      {products.map((product,id) => {
-        console.log(product.id)
-        if(product.id === undefined) return null
-        return (
-          <div key={id}>
-            <InCart data={product}/>
-          </div>
-          )
-        })
-      }
-      </div>
-      
-      <CustomerInformation/>
-      <DefaultState/>
-    </main>
+  return (
+  <main className="w-full max-w-md relative">
+    <div className='flex flex-wrap'>
+    {products.map((product,id) => {
+      console.log(product.id)
+      if(product.id === undefined) return null
+      return (
+        <div key={id}>
+          <InCart data={product}/>
+        </div>
+        )
+      })
+    }
+    </div>
+    
+    <CustomerInformation/>
+    <DefaultState/>
+  </main>
     )
 }

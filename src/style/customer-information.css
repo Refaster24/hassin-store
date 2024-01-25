@@ -24,6 +24,7 @@ label{
 
 input{
     border: 1px solid var(--color-3);
+    width: 100%;
     border-radius: .5em;
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
@@ -43,7 +44,7 @@ input:focus-visible{
     flex-wrap: wrap;
     align-content: flex-end;
     justify-content: space-between;
-
+    gap: 1em;
 }
 
 
@@ -75,3 +76,44 @@ select{
 .location input{
     width: 4em;
 }
+
+/* payment method START */
+
+.svg{
+    fill: var(--color-3);
+}
+
+.check-box{
+    appearance: none;
+    outline: 3px var(--color-3) solid;
+    outline-offset: 4px;
+    width: 1em;
+    height: 1em;
+    border-color: var(--color-3);
+    position: absolute;
+    left: 20px;
+}
+
+.check-box:checked{
+    background-color: var(--color-1);
+}
+
+
+.checked{
+    background-color: var(--color-4);
+}
+
+.checked svg{
+    fill: var(--color-1);
+}
+
+.checked label{
+    color: var(--color-1);
+}
+
+.checked .check-box{
+    outline-color: var(--color-1);
+    border-color: var(--color-1);
+}
+
+/* payment method END */
