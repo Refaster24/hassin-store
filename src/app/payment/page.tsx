@@ -20,8 +20,11 @@ export default function Payment(){
 
   return (
   <main className="w-full max-w-md relative">
+    <h1 className="bg-9 font-5 text-center text-2xl mb-4 py-2 rounded-b-3xl">
+      Hussen coal
+    </h1>
     <div className='flex flex-wrap'>
-    {products.map((product,id) => {
+    {/* {products.map((product,id) => {
       console.log(product.id)
       if(product.id === undefined) return null
       return (
@@ -30,11 +33,11 @@ export default function Payment(){
         </div>
         )
       })
-    }
+    } */}
     </div>
     
     <CustomerInformation/>
-    <DefaultState/>
+    {/* <DefaultState/> */}
   </main>
     )
 }

@@ -48,6 +48,7 @@ export default function CustomerInformation(){
         useEffect(()=>{
             const driver = document.querySelector('#driver') as HTMLDivElement
             const card = document.querySelector('#card') as HTMLDivElement
+                const creditCard = document.getElementById('creditCard') as HTMLDivElement
 
             const driverCheckBox = document.querySelector('#driver input') as HTMLInputElement
             const cardCheckBox = document.querySelector('#card input') as HTMLInputElement
@@ -57,6 +58,7 @@ export default function CustomerInformation(){
                 driverCheckBox.checked = true
                 cardCheckBox.checked = false
                 driver.classList.add('checked')
+                   creditCard.classList.add('credit-card-visibility')
             }
 
             function cartHandler(){
@@ -64,6 +66,7 @@ export default function CustomerInformation(){
                 driverCheckBox.checked = false
                 cardCheckBox.checked = true
                 card.classList.add('checked')
+                   creditCard.classList.remove('credit-card-visibility')
             }
 
             const driverLength = driver.children.length
@@ -85,7 +88,8 @@ export default function CustomerInformation(){
         },[])
 
         return (
-            <div className="space-y-2 my-4">
+            <>
+            <div className="space-y-2 m-4">
                 <h2>طريقة الدفع</h2>
 
                 <div id="driver" className="flex justify-start gap-2 items-center border-3 border-2 rounded-lg p-2 relative">
@@ -106,6 +110,36 @@ export default function CustomerInformation(){
                     <input className="check-box"  type="checkbox" name="" id="" />
                 </div>
             </div>
+            <div id="creditCard" className="credit-card-visibility mx-4 space-y-2 ">
+                <div className="w-full">
+                    <label htmlFor="">الاسم البطاقة</label>
+                    <input type="text" />
+                </div>
+                <div className="w-full">
+                    <label htmlFor="">رقم البطاقة</label>
+                    <input type="text" />
+                </div>
+
+                <div className="flex justify-between">
+                <div className="basis-[30%]">
+                    <label htmlFor="">السنة الإنتهاء</label>
+                    <input type="text" />
+                </div>
+
+                <div className="basis-[30%]">
+                    <label htmlFor="">الشهر الإنتهاء</label>
+                    <input type="text" />
+                </div>
+
+
+                <div className="basis-[30%]">
+                    <label htmlFor="">cvv</label>
+                    <input type="text" />
+                </div>
+
+                </div>
+            </div>
+            </>
         )
     }
 
@@ -153,6 +187,9 @@ export default function CustomerInformation(){
             </div>
 
             <PaymentMethod/>
+            <div className="bg-9 font-5 text-center text-2xl mt-4 py-2 rounded-t-3xl">
+                <button className="w-3/4 bg-8 font-5 px-2 py-1 rounded-lg my-2">شراء</button>
+            </div>
         </form>
         
     )

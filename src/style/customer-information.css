@@ -8,13 +8,11 @@
 }
 
 form{
-    margin: 1em;
     color: var(--color-5);
 }
 
 h2{
-
-    margin-bottom: 1em;
+    margin: 1em;
     font-weight: bold;
 }
 
@@ -40,7 +38,7 @@ input:focus-visible{
 
 .contact-information{
     display: flex;
-
+    margin-inline: 1em;
     flex-wrap: wrap;
     align-content: flex-end;
     justify-content: space-between;
@@ -58,10 +56,6 @@ input:focus-visible{
 }
 .filterFactors{
     width: 100%;
-}
-
-select{
-
 }
 
 .location-2{
@@ -114,6 +108,12 @@ select{
 .checked .check-box{
     outline-color: var(--color-1);
     border-color: var(--color-1);
+}
+
+.credit-card-visibility{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
 }
 
 /* payment method END */
