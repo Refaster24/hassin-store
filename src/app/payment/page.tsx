@@ -37,7 +37,7 @@ export default function Payment(){
     </div>
     
     <CustomerInformation/>
-    {/* <DefaultState/> */}
+    <DefaultState/>
   </main>
     )
 }

@@ -17,6 +17,7 @@ body{
   display: grid;
   place-items: center;
 }
+p{direction: ltr;}
 .font-5{
   color: var(--color-1);
 }

@@ -2,6 +2,7 @@
 import kuwait from "@/db/kuwait";
 import { useEffect, useState } from "react";
 import '@/style/customer-information.css'
+import Price from "./price";
 
 
 export default function CustomerInformation(){
@@ -187,6 +188,7 @@ export default function CustomerInformation(){
             </div>
 
             <PaymentMethod/>
+            <Price/>
             <div className="bg-9 font-5 text-center text-2xl mt-4 py-2 rounded-t-3xl">
                 <button className="w-3/4 bg-8 font-5 px-2 py-1 rounded-lg my-2">شراء</button>
             </div>
