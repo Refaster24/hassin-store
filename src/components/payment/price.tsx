@@ -30,10 +30,3 @@ export default function Price(){
         </section>
     )
 }
-
-
-// 20  2
-// 330  2
-// 3  1
-// 45  2
-// 10  10 = 6936

@@ -2,6 +2,7 @@
 import { useCartStore } from "@/store/cart"
 import dynamic from "next/dynamic"
 import Link from "next/link"
+import CartLoadnigButton from "./loading/cart-button"
 
 const InCart = dynamic(() => import('./in-cart'), {
   ssr: false,

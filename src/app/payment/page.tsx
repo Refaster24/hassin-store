@@ -1,12 +1,15 @@
 "use client"
 import CustomerInformation from '@/components/payment/customer-information'
-import FilterFactors from '@/components/payment/filterFactors'
 import { useCartStore } from '@/store/cart'
 import dynamic from 'next/dynamic'
 
 const InCart = dynamic(() => import('@/components/payment/in-cart'), {
     ssr: false,
-    loading: () => <p>gg</p>
+    loading: () => (
+      <div>
+        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </div>
+      )
 })
 
 const DefaultState = dynamic(() => import('@/components/default-state'), {
@@ -24,7 +27,7 @@ export default function Payment(){
       Hussen coal
     </h1>
     <div className='flex flex-wrap'>
-    {/* {products.map((product,id) => {
+    {products.map((product,id) => {
       console.log(product.id)
       if(product.id === undefined) return null
       return (
@@ -33,7 +36,7 @@ export default function Payment(){
         </div>
         )
       })
-    } */}
+    }
     </div>
     
     <CustomerInformation/>

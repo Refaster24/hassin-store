@@ -1,4 +1,5 @@
 "use client"
+import CartLoadnigButton from "@/components/loading/cart-button";
 import Product from "@/components/product";
 import { products } from "@/db/products";
 // import { useCartStore } from "@/store/cart";
@@ -9,38 +10,14 @@ import dynamic from "next/dynamic";
 
 const Cart = dynamic(() => import('@/components/cart'), {
   ssr: false,
-  loading: () => <p>gg</p>
+  loading: () => <CartLoadnigButton/>
 })
 
 const DefaultState = dynamic(() => import('@/components/default-state'), {
   ssr: false,
-  loading: () => <p>gg</p>
 })
 
 export default function Home() {
-  
-  // default state
-  // const setProduct = useCartStore((state => state.setProduct))
-  
-  // useEffect(()=>{
-  //   if(typeof window !== 'undefined'){
-  //     const localStorage = window.localStorage;
-  //     if(localStorage.length !== 0 && useCartStore.getState().products.length === 0) {
-  //     const cart = document.getElementById('cart')
-  //     const button = document.getElementById('button')
-  //     const product = [] as any
-  //     Object.keys(localStorage).forEach(key => {
-  //       product.push(JSON.parse(localStorage.getItem(key) as any));
-  //     });
-  //     setProduct(product)
-  //     // cart?.classList.remove('translate-y-[24em]')
-  //     // cart?.classList.add('cart');
-  //     button?.classList.remove('bg-8')
-  //     button?.classList.add('bg-7')
-  //     console.log('hh')
-  //   }
-  // }},[])
-    // 
 
   return (
   <>
